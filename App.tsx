@@ -34,8 +34,8 @@ const App: React.FC = () => {
   const socialLinks = [
     { name: { en: "GitHub", ar: "جيت هب" }, icon: <Github className="w-5 h-5" />, url: 'https://github.com/MohamedGamal-Ahmed', hoverAccent: 'hover:text-blue-600 dark:hover:text-blue-400' },
     { name: { en: "LinkedIn", ar: "لينكد إن" }, icon: <Linkedin className="w-5 h-5" />, url: 'https://www.linkedin.com/in/mohamed-gamal-357b10356/', hoverAccent: 'hover:text-blue-600 dark:hover:text-blue-400' },
-    { name: { en: "Murasala", ar: "مراسلة" }, icon: <Globe className="w-5 h-5" />, url: 'https://Murasala-Hub.app', hoverAccent: 'hover:text-emerald-600 dark:hover:text-emerald-400' },
     { name: { en: "Email", ar: "راسلني" }, icon: <Mail className="w-5 h-5" />, url: 'mailto:mgamal.ahmed@outlook.com', hoverAccent: 'hover:text-red-600 dark:hover:text-red-400' },
+    { name: { en: "Call Me", ar: "اتصل بي" }, icon: <Phone className="w-5 h-5" />, url: 'tel:01033501334', hoverAccent: 'hover:text-green-600 dark:hover:text-green-400' },
   ];
 
   return (
@@ -199,18 +199,8 @@ const App: React.FC = () => {
                       </motion.a>
                     ))}
                   </div>
-                  <motion.a
-                    href="tel:01033501334"
-                    className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white transition-all shadow-xl shadow-blue-500/30 active:scale-[0.98] group mt-2"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Phone className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-                    <span className="font-black text-sm">{t.phoneLabel}</span>
-                  </motion.a>
                 </div>
               </div>
-
             </div>
           </BentoCard>
         </div>
