@@ -43,7 +43,7 @@ const App: React.FC = () => {
       className={`min-h-screen py-8 px-4 md:px-12 lg:px-24 transition-colors duration-500 bg-gray-50 dark:bg-slate-950 ${isRtl ? 'font-[Tajawal]' : 'font-[Inter]'}`}
       dir={isRtl ? 'rtl' : 'ltr'}
     >
-      <div className="max-w-7xl mx-auto flex flex-col gap-6">
+      <div className="max-w-[1440px] mx-auto flex flex-col gap-6">
 
         {/* Header Actions */}
         <header className="flex items-center justify-between sticky top-0 z-50 py-4 -my-4 bg-gray-50/80 dark:bg-slate-950/80 backdrop-blur-lg">
@@ -205,84 +205,83 @@ const App: React.FC = () => {
           </BentoCard>
         </div>
 
-        {/* SKILLS SECTION */}
-        <SkillsSection lang={lang} title={t.skillsTitle} />
 
-        {/* EXPERIENCE & PROJECTS SECTION - Side by Side */}
-        <div className="mt-16 grid grid-cols-1 xl:grid-cols-2 gap-8">
-          {/* EXPERIENCE COLUMN */}
-          <div>
-            <ExperienceSection lang={lang} title={t.experienceTitle} />
+        {/* EXPERIENCE SECTION - Full Width */}
+        <div className="mt-24">
+          <ExperienceSection lang={lang} title={t.experienceTitle} />
+        </div>
+
+        {/* PROJECTS SECTION - Full Width Grid */}
+        <section className="mt-24 space-y-12" id="projects">
+          <div className="flex flex-col items-center text-center space-y-4">
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-slate-900 dark:text-white">{t.projectsTitle}</h2>
+            <div className="h-2 w-32 bg-blue-600 rounded-full" />
+            <p className="text-zinc-500 dark:text-zinc-400 max-w-2xl font-medium">
+              {isRtl ? 'مجموعة من أبرز أعمالي في مجالات الذكاء الاصطناعي، الرؤية الحاسوبية، وتطوير التطبيقات المتكاملة.' : 'A curated selection of my work in AI, Computer Vision, and Full-Stack Development.'}
+            </p>
           </div>
 
-          {/* PROJECTS COLUMN */}
-          <section className="space-y-6" id="projects">
-            <div className={`flex items-end justify-between px-2`}>
-              <div className="space-y-1">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 dark:text-white">{t.projectsTitle}</h2>
-                <div className="h-1.5 w-24 bg-blue-600 rounded-full" />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-6">
-              {PROJECTS.map((project, index) => (
-                <BentoCard key={project.id} delay={0.4 + index * 0.1} className="h-full flex flex-col justify-between hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10">
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-500/10 border border-blue-100 dark:border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400">
-                        <Rocket className="w-5 h-5" />
-                      </div>
-                    </div>
-                    <h3 className="text-xl font-black leading-tight tracking-tight text-slate-900 dark:text-white">
-                      {project.title[lang]}
-                    </h3>
-                    <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed font-medium">
-                      {project.description[lang]}
-                    </p>
-                    <div className="flex flex-wrap gap-2 pt-2">
-                      {project.tags.map(tag => (
-                        <span key={tag} className="px-3 py-1 rounded-lg bg-gray-50 dark:bg-slate-950/50 text-zinc-600 dark:text-zinc-400 text-[10px] font-black border border-slate-200 dark:border-slate-800">
-                          {tag}
-                        </span>
-                      ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {PROJECTS.map((project, index) => (
+              <BentoCard key={project.id} delay={0.4 + index * 0.1} className="h-full flex flex-col justify-between hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-500/10 border border-blue-100 dark:border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400">
+                      <Rocket className="w-5 h-5" />
                     </div>
                   </div>
-
-                  <div className="flex items-center gap-3 pt-8 mt-auto border-t border-slate-200 dark:border-slate-800">
-                    <motion.a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`flex-1 flex items-center justify-center gap-2 py-3 text-xs font-black uppercase tracking-wider ${secondaryBtnClasses}`}
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <Github className="w-4 h-4" />
-                      {isRtl ? 'الكود' : 'Code'}
-                    </motion.a>
-                    <motion.a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white transition-colors text-xs font-black uppercase tracking-wider shadow-lg shadow-blue-500/20"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      {isRtl ? 'معاينة' : 'Live'}
-                    </motion.a>
+                  <h3 className="text-xl font-black leading-tight tracking-tight text-slate-900 dark:text-white">
+                    {project.title[lang]}
+                  </h3>
+                  <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed font-medium">
+                    {project.description[lang]}
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {project.tags.map(tag => (
+                      <span key={tag} className="px-3 py-1 rounded-lg bg-gray-50 dark:bg-slate-950/50 text-zinc-600 dark:text-zinc-400 text-[10px] font-black border border-slate-200 dark:border-slate-800">
+                        {tag}
+                      </span>
+                    ))}
                   </div>
-                </BentoCard>
-              ))}
+                </div>
 
-              {/* Coming Soon Placeholder */}
-              <BentoCard className="flex flex-col items-center justify-center text-center py-12 border-dashed border-2 opacity-50 bg-transparent border-slate-300 dark:border-slate-700" delay={0.7}>
-                <Rocket className="w-12 h-12 text-zinc-400 mb-4 animate-pulse" />
-                <p className="text-zinc-400 font-black text-xs uppercase tracking-widest">...More coming soon</p>
+                <div className="flex items-center gap-3 pt-8 mt-auto border-t border-slate-200 dark:border-slate-800">
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex-1 flex items-center justify-center gap-2 py-3 text-xs font-black uppercase tracking-wider ${secondaryBtnClasses}`}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Github className="w-4 h-4" />
+                    {isRtl ? 'الكود' : 'Code'}
+                  </motion.a>
+                  <motion.a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white transition-colors text-xs font-black uppercase tracking-wider shadow-lg shadow-blue-500/20"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    {isRtl ? 'معاينة' : 'Live'}
+                  </motion.a>
+                </div>
               </BentoCard>
-            </div>
-          </section>
-        </div>
+            ))}
+
+            {/* Coming Soon Placeholder */}
+            <BentoCard className="flex flex-col items-center justify-center text-center py-12 border-dashed border-2 opacity-50 bg-transparent border-slate-300 dark:border-slate-700" delay={0.7}>
+              <Rocket className="w-12 h-12 text-zinc-400 mb-4 animate-pulse" />
+              <p className="text-zinc-400 font-black text-xs uppercase tracking-widest">...More coming soon</p>
+            </BentoCard>
+          </div>
+        </section>
+
+        {/* SKILLS SECTION - Moved here */}
+        <SkillsSection lang={lang} title={t.skillsTitle} />
 
         {/* TESTIMONIALS SECTION */}
         <TestimonialsSection lang={lang} title={t.testimonialsTitle} />

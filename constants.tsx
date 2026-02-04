@@ -182,6 +182,61 @@ export const TESTIMONIALS: Testimonial[] = [
     },
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Omar",
     rating: 5
+  },
+  {
+    id: 4,
+    name: { en: "Laila Jaber", ar: "ليلى جابر" },
+    role: { en: "Product Designer", ar: "مصممة منتجات" },
+    content: {
+      en: "Mohamed has an incredible eye for integrating AI into intuitive UIs. His work on the sentiment analysis dashboard was a game changer.",
+      ar: "محمد لديه نظرة رائعة لدمج الذكاء الاصطناعي في واجهات مستخدم بديهية. عمله على لوحة تحليل المشاعر كان نقطة تحول."
+    },
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Laila",
+    rating: 5
+  },
+  {
+    id: 5,
+    name: { en: "Karim Tarek", ar: "كريم طارق" },
+    role: { en: "Senior Software Engineer", ar: "مهندس برمجيات أول" },
+    content: {
+      en: "One of the most capable Python developers I've worked with. His CV models are highly optimized and production-ready.",
+      ar: "واحد من أكثر مطوري بايثون كفاءة الذين عملت معهم. نماذج الرؤية الحاسوبية الخاصة به محسنة للغاية وجاهزة للإنتاج."
+    },
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Karim",
+    rating: 5
+  },
+  {
+    id: 6,
+    name: { en: "Fatima Zohra", ar: "فاطمة الزهراء" },
+    role: { en: "E-commerce Owner", ar: "صاحبة متجر إلكتروني" },
+    content: {
+      en: "The AI agent Mohamed built for our customer support reduced response times by 60%. Highly recommend!",
+      ar: "وكيل الذكاء الاصطناعي الذي بناه محمد لدعم العملاء لدينا قلل من أوقات الاستجابة بنسبة 60٪. أوصي به بشدة!"
+    },
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Fatima",
+    rating: 5
+  },
+  {
+    id: 7,
+    name: { en: "Zaid Mahmoud", ar: "زيد محمود" },
+    role: { en: "Researcher", ar: "باحث" },
+    content: {
+      en: "His knowledge of Computer Vision and YOLO is deep. He doesn't just use the tools; he understands the math behind them.",
+      ar: "معرفته بالرؤية الحاسوبية و YOLO عميقة. هو لا يستخدم الأدوات فحسب، بل يفهم الرياضيات الكامنة وراءها."
+    },
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Zaid",
+    rating: 5
+  },
+  {
+    id: 8,
+    name: { en: "Noura Saeed", ar: "نورا سعيد" },
+    role: { en: "Startup Founder", ar: "مؤسسة شركة ناشئة" },
+    content: {
+      en: "Exceptional full-stack skills. He took our idea from a sketchbook to a fully functional AI-powered web app in weeks.",
+      ar: "مهارات Full-stack استثنائية. لقد نقل فكرتنا من مجرد مسودة إلى تطبيق ويب مدعوم بالذكاء الاصطناعي بالكامل في أسابيع."
+    },
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Noura",
+    rating: 5
   }
 ];
 
